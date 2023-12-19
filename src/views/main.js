@@ -1,9 +1,10 @@
 import { filterBySex, sortByName, sortByYear, computeStats } from '../lib/dataFunctions.js';
 import data from '../lib/dataSet.js';
+import { navigateTo } from '../router.js';
 
-const sectionRoot = document.querySelector('#rooot');
+const sectionRoot = document.querySelector('.contentCards');
 
-const renderItems = (data) => {
+export const renderItems = (data) => {
     const list = document.createElement('ul')
     data.forEach(character => {
         const card = document.createElement('li');
@@ -19,16 +20,11 @@ const renderItems = (data) => {
         list.appendChild(card)
 
         card.addEventListener('click', () => {
-            //cardContainer(character);  
-            console.log('holis')
+            navigateTo('/character', character)
         })
     });
     return list;
 };
-
-window.addEventListener("DOMContentLoaded", () => {
-    sectionRoot.appendChild(renderItems(data));
-});
 
 let newData = data;
 
@@ -64,18 +60,18 @@ btnReset.addEventListener('click', (e) => {
     sectionRoot.appendChild(renderItems(newData));
 })
 
-const compute = document.getElementById('compute');
-compute.innerHTML = `<h2>Estádistica de personas nacidas entre 1800 y 1900</h2>
-      <table>
-        <tr>
-          <th>&lt 1899</th>
-          <th>&gt 1900</th>
-        </tr>
-        <tr id="computeStats">
-        </tr>
-      </table>`;
+// const compute = document.getElementById('compute');
+// compute.innerHTML = `<h2>Estádistica de personas nacidas entre 1800 y 1900</h2>
+//       <table>
+//         <tr>
+//           <th>&lt 1899</th>
+//           <th>&gt 1900</th>
+//         </tr>
+//         <tr id="computeStats">
+//         </tr>
+//       </table>`;
 
-const computes = document.getElementById('computeStats');
-computeStats(data, 1899, 1900).map(year => {
-    computes.innerHTML += `<td>${year}%</td>`;
-});
+// const computes = document.getElementById('computeStats');
+// computeStats(data, 1899, 1900).map(year => {
+//     computes.innerHTML += `<td>${year}%</td>`;
+// });

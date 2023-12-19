@@ -20,6 +20,7 @@ TODO:
 
 
 import { home } from './views/home.js';
+import cardContainer from './views/card.js'
 import error from './views/error.js';
 // ... import other views
 import { setRootEl, setRoutes, onURLChange } from './router.js';
@@ -27,6 +28,7 @@ import { setRootEl, setRoutes, onURLChange } from './router.js';
 // Define your routes and their associated views
 const routes = {
   '/': home,
+  '/character': cardContainer,
   '/error': error,
   // ...
 };

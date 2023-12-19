@@ -8,23 +8,15 @@ export const setRootEl = (el) => {
 export const setRoutes = (routes) => {
   // optional Throw errors if routes isn't an object
   // optional Throw errors if routes doesn't define an /error route
-  if(!routes || typeof routes !== "object" || Array.isArray(routes)){
-    throw new Error("routes are invalid, should be an object")
-  }
-
-  if(!routes["/error"]){
-    throw new Error("route for '/error' is required")
-  }
   ROUTES = routes;
 }
 
 const queryStringToObject = (queryString) => {
-  if (!queryString) return {};
   // convert query string to URLSearchParams
-  const urlParams = new URLSearchParams(queryString);
+  const url = new URLSearchParams(queryString);
   // convert URLSearchParams to an object
   // return the object
-  return Object.fromEntries(urlParams);
+  return Object.fromEntries(url);
 }
 
 const renderView = (pathname, props={}) => {
