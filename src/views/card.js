@@ -2,8 +2,10 @@ import chat from "./chat.js";
 import { header, footer } from "./header&footer.js";
 
 const cardContainer = (character) => {
+
+    const container = document.createElement('div');
     const containerMain = document.createElement('main')
-    console.log(character.name);
+    containerMain.classList.add('containerMain')
 
     const card = document.createElement('article');
     card.innerHTML += `
@@ -19,8 +21,9 @@ const cardContainer = (character) => {
     const section = document.createElement('section');
     section.append(chat(character))
        
-    containerMain.append(header(), card, section, footer())
-    return containerMain;
+    containerMain.append(card, section);
+    container.append(header(), containerMain, footer())
+    return container;
 };
 
 export default cardContainer;

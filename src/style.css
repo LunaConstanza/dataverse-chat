@@ -8,7 +8,7 @@ body{
     margin: 0;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
-header {
+.divHeader {
     border-bottom: 30px solid darkblue;
     color: darkblue;
     padding: 10px;
@@ -84,7 +84,7 @@ td {
     border: 2px solid black;
 }
 @media only screen and (max-width: 500px){
-    header{
+    .divHeader{
         font-size: large;
     }
     .selectors{
@@ -95,3 +95,151 @@ td {
         width: 100px;
     }
 }
+
+
+/*******POP UP*******/
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    visibility: hidden;
+  }
+  .overlay.active {
+    visibility: visible;
+  }
+  .popup {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    align-items: center;
+    background: darkblue;
+    color: white;
+    box-shadow: 0 0 5px white, 0 0 15px white, 0 0 25px white;
+    border-radius: 5px;
+    padding: 20px 35px;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    transition: 0.3s ease all;
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  .popup.active {
+    opacity: 1;
+    transform: scale(1); /*animacion*/
+  }
+  .popup .fa-xmark {
+    grid-column: 3/4;
+    justify-self: end;
+    color: white;
+  }
+  .popup .fa-solid:hover {
+    color: orange;
+    cursor: pointer;
+  }
+  .popup h3 {
+    grid-column: 1/4;
+    font-size: 1.4rem;
+  }
+  .popup form {
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    row-gap: 10px;
+  }
+  .popup form input {
+    grid-column: 1/4;
+    height: 40px;
+  }
+  .popup form .btnSubmitKey {
+    grid-column: 2/3;
+    height: 40px;
+  }
+
+  .popup button {
+    grid-column: 2/3;
+    background-color: orange;
+    color: darkblue;
+    padding: 5px;
+  }
+
+  .popup button:hover {
+    background-color: white;
+  }
+  /* ---- FIN POPUP ------ */
+  
+
+  /* ---------------- CONTAINER ------------------ */
+  .containerMain{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-items: center;
+    margin: 100px 200px;
+    column-gap: 150px;
+  }
+
+  .containerMain article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    text-align: start;
+    column-gap: 30px;
+    height: 400px;
+  }
+
+  .containerMain img {
+    width: 350px;
+  }
+
+  .containerChat{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr 2fr;
+  }
+
+  .chatName {
+    height: 80px;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr;
+    justify-items: start;
+    column-gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid rgb(165, 155, 155);
+  }
+
+  .chatName img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    object-fit: cover;
+    object-position: 50% 0%;
+  }
+
+  .containerMain section {
+    border: 2px solid gainsboro;
+    box-shadow: 0px 1px 10px rgba(65, 62, 62, 0.247);
+    padding: 20px;
+  }
+
+  .chatContent {
+    overflow-y: scroll;
+    padding: 10px;
+  }
+
+  .message1{
+    text-align: end;
+  }
+
+  .message2 {
+    text-align: start;
+  }
+
+  .chatText{
+    border-top: 1px solid rgb(165, 155, 155);
+  }

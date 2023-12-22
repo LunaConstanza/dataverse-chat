@@ -37,6 +37,7 @@
     "commit": "916e031e02c3283ec75092f3e122fa58755d56c3"
   },
   "dependencies": {
-    "axios": "^1.6.2"
+    "axios": "^1.6.2",
+    "node-fetch": "^3.3.2"
   }
 }
