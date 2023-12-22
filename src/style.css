@@ -245,3 +245,21 @@ td {
   .chatText{
     border-top: 1px solid rgb(165, 155, 155);
   }
+
+  .chatText form {
+    padding-top: 30px;
+  }
+
+
+  /* --------- PANEL----------- */
+
+  .chatNames {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: start;
+    column-gap: 10px;
+    align-items: center;
+    border-bottom: 1px solid rgb(165, 155, 155);
+  }

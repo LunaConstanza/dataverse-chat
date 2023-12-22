@@ -1,7 +1,7 @@
 import { navigateTo } from "../router.js";
 
 export const header = () => {
-    const body = document.querySelector('body');
+    const body = document.querySelector('#root');
 
     const container = document.createElement('header');
     const div1 = document.createElement('div');
