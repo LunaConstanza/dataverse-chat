@@ -1,5 +1,11 @@
+import { header, footer } from "./header&footer.js";
+
 export const panel = () => {
     const container = document.createElement('div');
-    container.innerHTML = `<p>Copyright &copy; 2023 - Luna González</p>`;
+    const main = document.createElement('div');
+    main.innerHTML = `<p>Aqui va un chat grupal</p>`;
+
+    container.append(header(), main, footer());
+
     return container
 }

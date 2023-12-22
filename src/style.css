@@ -189,7 +189,6 @@ td {
     justify-items: start;
     text-align: start;
     column-gap: 30px;
-    height: 400px;
   }
 
   .containerMain img {
@@ -225,11 +224,14 @@ td {
     border: 2px solid gainsboro;
     box-shadow: 0px 1px 10px rgba(65, 62, 62, 0.247);
     padding: 20px;
+    width: 400px;
   }
 
   .chatContent {
     overflow-y: scroll;
+    scroll-behavior: smooth;
     padding: 10px;
+    height: 300px;
   }
 
   .message1{

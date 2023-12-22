@@ -11,11 +11,13 @@ export const header = () => {
         <h1>Data Scout</h1>
         <img src="./images/flor de lis.png" alt="Icono de una Flor de Lis Amarilla">`;
     const div2 = document.createElement('nav');
+    const btnHome = document.createElement('button');
+    btnHome.textContent = 'Home';
     const btnKey = document.createElement('button');
     btnKey.textContent = 'Mi llave';
     const btnPanel = document.createElement('button');
     btnPanel.textContent = 'Panel';
-    div2.append(btnKey, btnPanel);
+    div2.append(btnHome, btnKey, btnPanel);
     container.append(div1, div2);
 
     // POP UP -----------------------------
@@ -83,6 +85,11 @@ export const header = () => {
             inputKey.removeAttribute('disabled', '');
             inputKey.value = '';
         }
+    })
+
+
+    btnHome.addEventListener('click', ()=> {
+        navigateTo('/');
     })
 
     btnPanel.addEventListener('click', () => {
